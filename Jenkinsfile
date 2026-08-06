@@ -29,9 +29,13 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t python-flask-devops:${BUILD_NUMBER} .'
-            }
-        }
+    	    steps {
+        	sh '''
+            	export PATH="/usr/local/bin:$PATH"
+            	docker --version
+           	 docker build -t python-flask-devops:${BUILD_NUMBER} .
+        	'''
+    	    }
+	}
     }
 }
