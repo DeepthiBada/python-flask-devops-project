@@ -1,6 +1,7 @@
 from flask import Flask
 
 
+#My first application implementing through end-to-end flow
 app = Flask(__name__)
 
 
